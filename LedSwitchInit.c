@@ -8,7 +8,7 @@
 
 void switch1_int(){        //PF4
 	
-	SYSCTL_RCGCGPIO_REG |=0x20;                   // enable port F clk
+	SYSCTL_RCGCGPIO_REG |=0x20;                   // enable port F clock
 	while((SYSCTL_PRGPIO_REG & 0x20) ==0 );     //checking the clock is set 
 	
 	GPIO_PORTF_LOCK_REG =0x4C4F434B;
