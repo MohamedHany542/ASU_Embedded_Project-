@@ -16,22 +16,21 @@ int main (){
 
  LED_Green_int();  // initialize green led
 	
+unsigned char distance = 100;
 
-	
 while (1){
 	
-switch_press = read_switch1();	// read switch
+if (BIT_IS_CLEAR(GPIO_PORTF_DATA_REG,SW1_MASK) && (distance >= 100) )
+{
+	
+	GREEN_LED_out ( green_led ); // if switch is pressed the led is on
+	
+}
+	else
+	{
+	  /********* Do Nothing  *******/
 
-if (switch_press != switch_mask ) { 
-	
-	GREEN_LED_out ( green_led );                                   // if switch is pressed the led is on
-	
-}
-	else {
-	
-	  GREEN_LED_clear ()   ;                              // if switch is pressed the led is on
-	
-}
+    }
 	
 	}
 	
