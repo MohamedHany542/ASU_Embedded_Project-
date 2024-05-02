@@ -8,13 +8,13 @@
 
 void switch1_int(){        //PF4
 	
-	SYSCTL_RCGCGPIO_REG |=0x20;                   // enable port F clock
-	while((SYSCTL_PRGPIO_REG & 0x20) ==0 );     //checking the clock is set 
+	SYSCTL_RCGCGPIO_REG |=0x20;                   // port F clock enable
+	while((SYSCTL_PRGPIO_REG & 0x20) ==0 );     //checking the clock is set (delay)
 	
-	GPIO_PORTF_LOCK_REG =0x4C4F434B;
-	GPIO_PORTF_CR_REG    |= switch_mask;               //enable p4 programming
+	GPIO_PORTF_LOCK_REG =0x4C4F434B;           // unlock pf commit register
+	GPIO_PORTF_CR_REG    |= switch_mask;               //enable pf4 programming
 	GPIO_PORTF_DIR_REG   &= ~switch_mask;              //set as input 
-	GPIO_PORTF_AFSEL_REG &= ~switch_mask;              // disable ulternate function    
+	GPIO_PORTF_AFSEL_REG &= ~switch_mask;              // disable alternate function    
 	GPIO_PORTF_PUR_REG   |= switch_mask;               // negative logic switch 
 	GPIO_PORTF_DEN_REG   |= switch_mask;               // digital enable    
 	GPIO_PORTF_AMSEL_REG &= ~switch_mask;              //disable analog function
@@ -24,14 +24,14 @@ void switch1_int(){        //PF4
 
 	void LED_Green_int(){         //pf3
 		
-	SYSCTL_RCGCGPIO_REG |=0x20;                   // enable port F clk
-	while((SYSCTL_PRGPIO_REG & 0x20) ==0 );       //checking the clock is set 
+	SYSCTL_RCGCGPIO_REG |=0x20;                   // port F clk enable
+	while((SYSCTL_PRGPIO_REG & 0x20) ==0 );       //checking the clock is set (delay)
 	
-	GPIO_PORTF_LOCK_REG =0x4C4F434B;
-	GPIO_PORTF_CR_REG    |=  GREEN_LED_mask;              //enable p4 programming
+	GPIO_PORTF_LOCK_REG =0x4C4F434B;            // unlock pf commit register
+	GPIO_PORTF_CR_REG    |=  GREEN_LED_mask;              //enable pf4 programming
 	GPIO_PORTF_DIR_REG   |=  GREEN_LED_mask;              //set as OUTPUT
   GPIO_PORTF_DATA_REG  &=~ GREEN_LED_mask;              // initially off 
-	GPIO_PORTF_AFSEL_REG &=~ GREEN_LED_mask;             // disable ulternate function    
+	GPIO_PORTF_AFSEL_REG &=~ GREEN_LED_mask;             // disable alternate function    
 	GPIO_PORTF_DEN_REG   |=  GREEN_LED_mask;              // digital enable    
 	GPIO_PORTF_AMSEL_REG &=~ GREEN_LED_mask;             //disable analog function
 	GPIO_PORTF_PCTL_REG  =0x0000F000;
