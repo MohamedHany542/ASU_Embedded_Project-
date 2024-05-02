@@ -382,6 +382,29 @@ UART0 Registers
 #define UART0_CC_REG              (*((volatile uint32 *)0x4000CFC8))
 
 /*****************************************************************************
+UART1 Registers
+*****************************************************************************/
+#define UART1_DR_REG              (*((volatile uint32 *)0x4000D000))
+#define UART1_RSR_REG             (*((volatile uint32 *)0x4000D004))
+#define UART1_ECR_REG             (*((volatile uint32 *)0x4000D004))
+#define UART1_FR_REG              (*((volatile uint32 *)0x4000D018))
+#define UART1_ILPR_REG            (*((volatile uint32 *)0x4000D020))
+#define UART1_IBRD_REG            (*((volatile uint32 *)0x4000D024))
+#define UART1_FBRD_REG            (*((volatile uint32 *)0x4000D028))
+#define UART1_LCRH_REG            (*((volatile uint32 *)0x4000D02C))
+#define UART1_CTL_REG             (*((volatile uint32 *)0x4000D030))
+#define UART1_IFLS_REG            (*((volatile uint32 *)0x4000D034))
+#define UART1_IM_REG              (*((volatile uint32 *)0x4000D038))
+#define UART1_RIS_REG             (*((volatile uint32 *)0x4000D03C))
+#define UART1_MIS_REG             (*((volatile uint32 *)0x4000D040))
+#define UART1_ICR_REG             (*((volatile uint32 *)0x4000D044))
+#define UART1_DMACTL_REG          (*((volatile uint32 *)0x4000D048))
+#define UART1_9BITADDR_REG        (*((volatile uint32 *)0x4000D0A4))
+#define UART1_9BITAMASK_REG       (*((volatile uint32 *)0x4000D0A8))
+#define UART1_PP_REG              (*((volatile uint32 *)0x4000DFC0))
+#define UART1_CC_REG              (*((volatile uint32 *)0x4000DFC8))
+
+/*****************************************************************************
 Micro Direct Memory Access Registers (UDMA)
 *****************************************************************************/
 #define UDMA_STAT_REG             (*((volatile uint32 *)0x400FF000))
