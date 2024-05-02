@@ -6,7 +6,6 @@
  *
  * Description: Platform types for ARM Cortex-M4F
  *
- *
  *******************************************************************************/
 
 #ifndef PLATFORM_TYPES_H
