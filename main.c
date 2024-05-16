@@ -35,7 +35,7 @@ Author:
 #include "gps.h"
 #include "LedSwitchInitH.h"
 #include "Gpt.h"
-#include "EEPROM-private.h"
+#include "EEPROM.h"
 
 
 
