@@ -52,7 +52,7 @@ double longitude [100];
 
 int main () {
 
-	
+	 // initializations 
 	LED_Green_int();
 	switch1_int();
 	 UART0_Init();
@@ -61,7 +61,7 @@ EEPROMMassErase();
 	
 	while (1){
 do{
-	
+	//function to read the data and get latitude , magnitude arrays 
 	GPS_read(latitude, longitude);
 	
 	calc_distance ( latitude,  longitude);
@@ -72,7 +72,7 @@ do{
 	
 } while (distance <100);
 	
-
+// when distance 100m is reached , green led is turned on 
 if (distance == 100){
 	
 if (read_switch1() != switch_mask ){
