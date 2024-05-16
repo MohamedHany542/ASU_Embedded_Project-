@@ -32,7 +32,7 @@ Author: Haneen Ahmed Abdelfattah
 #include "Std_Types.h"
 #include "uart_1.h"
 #include "uart0.h"
-#include "EEPROM-private.h"
+#include "EEPROM.h"
 
 #define PI 3.14159265358979323846
 
@@ -43,6 +43,8 @@ double distance = 0;
 
 double latitude [100];
 double longitude [100];
+double new_latitude [100];
+double new_longitude [100];
 
 #define  EARTH_RADIUS  6371000
 
@@ -140,8 +142,8 @@ UART0_SendData ( latitude ,(sizeof(latitude)/sizeof (double)));
 void read_eeprom (){
 
 
-EEPROMRead (latitude, 0,(int)(sizeof(latitude)/sizeof (double)));
- EEPROMRead (longitude,(int)(sizeof(latitude)) ,(int)(sizeof(longitude)/sizeof (double)));
+EEPROMRead (new_latitude, 0,(int)(sizeof(new_latitude)/sizeof (double)));
+ EEPROMRead (new_longitude,(int)(sizeof(new_latitude)) ,(int)(sizeof(new_longitude)/sizeof (double)));
 
 }
 
