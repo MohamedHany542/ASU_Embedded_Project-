@@ -49,6 +49,8 @@ extern char counter;
 double distance = 0;
 double latitude [100];
 double longitude [100];
+double new_latitude [100];
+double new_longitude [100];
 
 int main () {
 
